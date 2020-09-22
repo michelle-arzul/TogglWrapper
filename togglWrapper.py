@@ -27,9 +27,7 @@ class DetailedReport:
         first_response = DetailedReport.__fetch_detailed_report__(user, password, user_agent, workspace_id, since, until, 1)
         print('Fetched first page.')
         full_response.update(first_response)
-        total_count = full_response['total_count']
-        per_page = full_response['per_page']
-        pages = math.ceil(total_count/per_page)
+        pages = math.ceil(full_response['total_count']/full_response['per_page'])
         print('Total of {} pages to fetch.'.format(pages))
         for n in range(2, pages + 1):
             print('Fetching page {} of {}...'.format(n, pages))

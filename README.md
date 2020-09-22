@@ -13,4 +13,14 @@ Import the relevant class (e.g. DetailedReport) from togglWrapper.py and use its
 
 Press `Ctrl + C` to exit, which will abort fetching.
 
-An example is provided.
+Example:
+
+```python
+from togglWrapper import DetailedReport
+
+if __name__ == '__main__':
+    user = '276cba70c2581219b8e9947281c22343'
+    password = 'api_token'
+    workspace_id = '3923020'
+    DetailedReport.run(user, password, workspace_id)
+```
